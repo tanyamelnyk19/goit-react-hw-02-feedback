@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import './FeedbackOptions.css';
 
 export default function Feedback({ options, onLeaveFeedback }) {
@@ -20,3 +21,12 @@ export default function Feedback({ options, onLeaveFeedback }) {
     </ul>
   );
 }
+
+Feedback.propTypes = {
+  options: PropTypes.array.isRequired,
+  onLeaveFeedback: PropTypes.func.isRequired,
+};
+
+Feedback.defaultProps = {
+  options: ['good', 'neutral', 'bad'],
+};
