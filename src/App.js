@@ -16,8 +16,13 @@ class App extends Component {
     }));
   };
 
-  render() {
+  getButtonsNames() {
     const buttons = Object.keys(this.state);
+    return buttons;
+  }
+
+  render() {
+    // const buttons = Object.keys(this.state);
     const { good, neutral, bad } = this.state;
     const { onLeaveFeedback } = this;
     const countTotalFeedback = good + neutral + bad;
@@ -28,7 +33,7 @@ class App extends Component {
       <Fragment>
         <Section title="Please leave feedback">
           <FeedbackOptions
-            options={buttons}
+            options={this.getButtonsNames()}
             onLeaveFeedback={onLeaveFeedback}
           />
         </Section>
